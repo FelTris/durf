@@ -22,6 +22,7 @@ environment models in many cases. We propose a method that can use the data that
 collected during normal operation of a self-driving car to model a scene in a Neural
 Radiance Field (NeRF), which allows us to perform Novel View Synthesis and view the
 scene from previously unseen camera perspectives.
+
 To do this we have to overcome a few problems with modeling an unbounded
 outdoor scene in a NeRF, namely sampling efficiency in unbounded spaces, sparse
 views and dynamic scene content. We do this by combining advances from multiple
@@ -32,6 +33,7 @@ that are emitted by a NeRF with depth and volume carving losses. And lastly we
 decompose the scene into static background and dynamic parts with the help of 3D
 bounding box annotations and then train a separate NeRF for the background and each
 dynamic object, which allows us to manipulate camera and object pose separately.
+
 Since we want to make this method easily scalable we relax the requirement for
 perfect human-annotated 3D bounding boxes and propose a method to optimise their
 position and orientation jointly with the radiance field. We accomplish this by framing
@@ -40,6 +42,7 @@ the problem as a camera registration task and treating the transformation given 
 data. Our method disables positional encoding to get around noisy gradients that can
 arise from backpropagating through it until the bounding boxes have converged and
 then uses anti-aliased integrated positional encoding to learn high frequency features.
+
 We apply our method to a synthetic dataset which we generate with CARLA, a
 self-driving simulator, and the Waymo Open Dataset. Our method is capable of
 recovering reasonable 3D bounding boxes from errors up to half a meter from just five
