@@ -50,6 +50,8 @@ observations when we use LIDAR depth information in addition to RGB supervision.
 We also outperform a non-dynamic aware baseline in the Novel View Synthesis task
 for both ground truth and optimised bounding boxes.
 
+[Full Thesis](https://drive.google.com/file/d/1e1a-DDODgXoN0TxONETH3ZJ7QWU91tjj/view?usp=sharing)
+
 ## Videos
 
 <img src="videos/test_seg1_5.gif" width="280">
