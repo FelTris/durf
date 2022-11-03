@@ -14,9 +14,8 @@ and in particular contains our own re-implementation of URFs LIDAR losses,
 Mip-NeRF360s spatial re-parameterisation and BARFs frequency encoding filtering.
 
 
-<img src="videos/test_seg1_5.gif" align="left" width="240">
-<img src="videos/waymo1_5_depth.gif" align="right" width="240">
-
+<img src="videos/test_seg1_5.gif" width="280">
+<img src="videos/waymo1_5_depth.gif" width="280">
 
 ## Installation
 
