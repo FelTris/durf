@@ -1,7 +1,7 @@
 # Dynamic Urban Radiance Fields
 This repository contains the Code release for my thesis, 
 in which we use Neural Radiance Fields to perform Novel View Synthesis on unbounded dynamic urban scenes. 
-We demonstrate out method on the [Waymo Open Dataset](https://waymo.com/open/) 
+We demonstrate our method on the [Waymo Open Dataset](https://waymo.com/open/) 
 and data we generate ourselves with [CARLA](https://carla.org).
 We combine approaches from [Urban Radiance Fields](https://urban-radiance-fields.github.io) (URF), 
 [Mip-NeRF360](https://jonbarron.info/mipnerf360/), [Neural Scene Graphs](https://light.princeton.edu/publication/neural-scene-graphs/) (NSG)
@@ -65,7 +65,7 @@ I'm not sure how ok it is otherwise to share waymo open data publically.
 
 We provide example scripts for training with CARLA and Waymo data in `scripts/`. 
 Change the paths to where you put the data on your system. 
-[Gin](https://github.com/google/gin-config) configuration files are provided for each dataset in `configs`. 
+[Gin](https://github.com/google/gin-config) configuration files are provided for each dataset in `configs/`. 
 To evaluate or render your own trajectory we provide jupyter notebooks in `notebooks/`.
 
 ## Citation
