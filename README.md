@@ -14,8 +14,18 @@ and in particular contains our own re-implementation of URFs LIDAR losses,
 Mip-NeRF360s spatial re-parameterisation and BARFs frequency encoding filtering.
 
 
-<img src="videos/test_seg1_5.gif" width="280"> RGB Novel View Synthesis results.
-<img src="videos/waymo1_5_depth.gif" width="280"> Rendered Depth for the above sequence.
+<img src="videos/test_seg1_5.gif" width="280">
+<img src="videos/waymo1_5_depth.gif" width="280">
+
+
+The results above are generated from a NeRF that was only trained on 25 Images and their corresponding depth images.
+
+In another experiment we jointly optimise the bounding box poses and the radiance field:
+
+<img src="videos/test_seg1_5_opt.gif" width="280">
+<img src="videos/test_seg1_5_noopt.gif" width="280">
+
+Our method is able to recover the bounding box pose and radiance field.
 
 ## Installation
 
@@ -45,6 +55,7 @@ pip install --upgrade jax jaxlib==0.1.65+cuda101 -f https://storage.googleapis.c
 ## Data
 
 For the waymo open data, download the sequences from the official website and run both the waymo_data and waymo_labels notebooks.
+To generate the sky masks use an off-the-shelf segmentation network and save the sky pixels as a mask.
 We also provide a few examples 
 [here](https://drive.google.com/drive/folders/1FENBETwX2K_8qdYIckfUGiLUtrmyol1T?usp=sharing) for data we generate with CARLA.
 If you want an example of how the waymo data format is supposed to look, please contact me directly. 
@@ -62,7 +73,7 @@ To evaluate or render your own trajectory we provide jupyter notebooks in `noteb
 If you use this code in your research please cite our work.
 
 ```
-@mastersthesis{DURF,
+@mastersthesis{durf22,
   author  = {Felix Tristram and
                Matthias Niessner},
   title   = {Neural Rendering for Dynamic Urban Scenes},
