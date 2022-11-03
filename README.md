@@ -1,5 +1,5 @@
 # Dynamic Urban Radiance Fields
-This repository contains the Code release for my master thesis, 
+This repository contains the Code release for my thesis, 
 in which we use Neural Radiance Fields to perform Novel View Synthesis on unbounded dynamic urban scenes. 
 We demonstrate out method on the [Waymo Open Dataset](https://waymo.com/open/) 
 and data we generate ourselves with [CARLA](https://carla.org).
@@ -14,8 +14,8 @@ and in particular contains our own re-implementation of URFs LIDAR losses,
 Mip-NeRF360s spatial re-parameterisation and BARFs frequency encoding filtering.
 
 
-<img src="videos/test_seg1_5.gif" width="280">
-<img src="videos/waymo1_5_depth.gif" width="280">
+<img src="videos/test_seg1_5.gif" width="280"> RGB Novel View Synthesis results.
+<img src="videos/waymo1_5_depth.gif" width="280"> Rendered Depth for the above sequence.
 
 ## Installation
 
@@ -49,3 +49,25 @@ We also provide a few examples
 [here](https://drive.google.com/drive/folders/1FENBETwX2K_8qdYIckfUGiLUtrmyol1T?usp=sharing) for data we generate with CARLA.
 If you want an example of how the waymo data format is supposed to look, please contact me directly. 
 I'm not sure how ok it is otherwise to share waymo open data publically. 
+
+## Training \& Inference
+
+We provide example scripts for training with CARLA and Waymo data in `scripts/`. 
+Change the paths to where you put the data on your system. 
+[Gin](https://github.com/google/gin-config) configuration files are provided for each dataset in `configs`. 
+To evaluate or render your own trajectory we provide jupyter notebooks in `notebooks/`.
+
+## Citation
+
+If you use this code in your research please cite our work.
+
+```
+@mastersthesis{DURF,
+  author  = {Felix Tristram and
+               Matthias Niessner},
+  title   = {Neural Rendering for Dynamic Urban Scenes},
+  school  = {Technical University of Munich},
+  year    = {2022},
+  note    = {Visual Computing Group}
+}
+```
