@@ -8,11 +8,46 @@ We combine approaches from [Urban Radiance Fields](https://urban-radiance-fields
 and [BARF](https://chenhsuanlin.bitbucket.io/bundle-adjusting-NeRF/).  
 
 
-
 Our method is built on top of [Mip-NeRF](https://github.com/google/mipnerf) in [JAX](https://github.com/google/jax)
 and in particular contains our own re-implementation of URFs LIDAR losses, 
 Mip-NeRF360s spatial re-parameterisation and BARFs frequency encoding filtering.
 
+
+## Abstract
+
+Modern self-driving systems collect vast amounts of data to train their advanced
+detection and decision-making algorithms. In contrast, simulation environments in
+which changes to a self-driving system are tested still rely on handcrafted assets and
+environment models in many cases. We propose a method that can use the data that is
+collected during normal operation of a self-driving car to model a scene in a Neural
+Radiance Field (NeRF), which allows us to perform Novel View Synthesis and view the
+scene from previously unseen camera perspectives.
+To do this we have to overcome a few problems with modeling an unbounded
+outdoor scene in a NeRF, namely sampling efficiency in unbounded spaces, sparse
+views and dynamic scene content. We do this by combining advances from multiple
+recent state-of-the-art works. First we employ a non-linear scene re-parameterization
+to deal with sampling efficiency, which shrinks space so it is bounded again and can
+be easily sampled. Secondly we deal with sparse views by supervising the densities
+that are emitted by a NeRF with depth and volume carving losses. And lastly we
+decompose the scene into static background and dynamic parts with the help of 3D
+bounding box annotations and then train a separate NeRF for the background and each
+dynamic object, which allows us to manipulate camera and object pose separately.
+Since we want to make this method easily scalable we relax the requirement for
+perfect human-annotated 3D bounding boxes and propose a method to optimise their
+position and orientation jointly with the radiance field. We accomplish this by framing
+the problem as a camera registration task and treating the transformation given by a
+3D bounding box as an extrinsic camera matrix that needs to be registered with image
+data. Our method disables positional encoding to get around noisy gradients that can
+arise from backpropagating through it until the bounding boxes have converged and
+then uses anti-aliased integrated positional encoding to learn high frequency features.
+We apply our method to a synthetic dataset which we generate with CARLA, a
+self-driving simulator, and the Waymo Open Dataset. Our method is capable of
+recovering reasonable 3D bounding boxes from errors up to half a meter from just five
+observations when we use LIDAR depth information in addition to RGB supervision.
+We also outperform a non-dynamic aware baseline in the Novel View Synthesis task
+for both ground truth and optimised bounding boxes.
+
+## Videos
 
 <img src="videos/test_seg1_5.gif" width="280">
 <img src="videos/waymo1_5_depth.gif" width="280">
