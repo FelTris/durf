@@ -25,7 +25,7 @@ In another experiment we jointly optimise the bounding box poses and the radianc
 <img src="videos/test_seg1_5_opt.gif" width="280">
 <img src="videos/test_seg1_5_noopt.gif" width="280">
 
-Our method is able to recover the bounding box pose and radiance field.
+The first gif shows our method when optimising the bounding box pose and the second without optimisation. 
 
 ## Installation
 
