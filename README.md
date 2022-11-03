@@ -54,17 +54,13 @@ for both ground truth and optimised bounding boxes.
 
 ## Videos
 
-<img src="videos/test_seg1_5.gif" width="280">
-<img src="videos/waymo1_5_depth.gif" width="280">
-
+Novel View Synthesis results from our method with rendered depth:
+<img src="videos/waymo1_5_combined.gif" width="960">
 
 The results above are generated from a NeRF that was only trained on 25 Images and their corresponding depth images.
 
 In another experiment we jointly optimise the bounding box poses and the radiance field:
-
-<img src="videos/test_seg1_5_opt.gif" width="280">
-<img src="videos/test_seg1_5_noopt.gif" width="280">
-
+<img src="videos/waymo_opt_combined.gif" width="960">
 The first gif shows our method when optimising the bounding box pose and the second without optimisation. 
 
 ## Installation
