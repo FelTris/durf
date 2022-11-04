@@ -10,7 +10,7 @@ and [BARF](https://chenhsuanlin.bitbucket.io/bundle-adjusting-NeRF/).
 
 Our method is built on top of [Mip-NeRF](https://github.com/google/mipnerf) in [JAX](https://github.com/google/jax)
 and in particular contains our own re-implementation of URFs LIDAR losses, 
-Mip-NeRF360s spatial re-parameterisation and BARFs frequency encoding filtering.
+Mip-NeRF360s spatial re-parameterization and BARFs frequency encoding filtering.
 
 
 ## Abstract
@@ -95,7 +95,7 @@ To generate the sky masks use an off-the-shelf segmentation network and save the
 We also provide a few examples 
 [here](https://drive.google.com/drive/folders/1FENBETwX2K_8qdYIckfUGiLUtrmyol1T?usp=sharing) for data we generate with CARLA.
 If you want an example of how the waymo data format is supposed to look, please contact me directly. 
-I'm not sure how ok it is otherwise to share waymo open data publically. 
+I'm not sure how ok it is otherwise to share waymo open data publicly. 
 
 ## Training \& Inference
 
@@ -106,7 +106,7 @@ To evaluate or render your own trajectory we provide jupyter notebooks in `noteb
 
 ## Citation
 
-If you use this code in your research please cite our work.
+If you use this code in your research please cite:
 
 ```
 @mastersthesis{durf22,
